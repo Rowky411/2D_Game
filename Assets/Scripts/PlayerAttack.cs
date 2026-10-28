@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// Sword attack: Space, J or left mouse button swings the big sword in the facing direction
-// and damages every mob in front of the player once per swing.
+// Sword attack: Space, J or left mouse button swings the big sword towards the player's aim
+// (the mouse cursor) and damages every mob in front of the player once per swing.
 [RequireComponent(typeof(Animator), typeof(SpriteRenderer))]
 public class PlayerAttack : MonoBehaviour
 {
@@ -31,6 +31,7 @@ public class PlayerAttack : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private PlayerHealth health;
+    private PlayerController controller;
     private readonly HashSet<Mob> hitThisSwing = new HashSet<Mob>();
     private readonly Collider2D[] overlaps = new Collider2D[16];
     private float nextAttackTime;
@@ -45,6 +46,7 @@ public class PlayerAttack : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         health = GetComponent<PlayerHealth>();
+        controller = GetComponent<PlayerController>();
         if (sword != null) sword.enabled = false;
     }
 
@@ -79,7 +81,7 @@ public class PlayerAttack : MonoBehaviour
         facing = CurrentFacing();
         hitThisSwing.Clear();
 
-        Vector2 direction = FacingVector(facing);
+        Vector2 direction = controller != null ? controller.AimDirection : FacingVector(facing);
         float baseAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
         if (sword != null)
         {

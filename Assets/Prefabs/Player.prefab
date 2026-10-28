@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 2009366288581857663}
   - component: {fileID: 481525833543334642}
   - component: {fileID: 5186548653217490222}
+  - component: {fileID: 5614360135597209779}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -295,6 +296,24 @@ MonoBehaviour:
   - {fileID: 1087509063981010975, guid: 14868f11473d9534b94ec1fde37f3174, type: 3}
   - {fileID: -8250748791992759450, guid: 14868f11473d9534b94ec1fde37f3174, type: 3}
   hitEffectFps: 20
+--- !u!114 &5614360135597209779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673376341043856778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f6212c0cbc1ed42a3c1b86d8909b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSpellcaster
+  spells:
+  - {fileID: 11400000, guid: a1c0c68379916a9418a1cb060cb74a75, type: 2}
+  - {fileID: 11400000, guid: d9ae79ecb9a1a3743905fff89f37fd21, type: 2}
+  - {fileID: 11400000, guid: 10f07ef0246e1304b90e27e02e2c2d9d, type: 2}
+  keys: 290000002a0000002b000000i
+  castOrigin: {x: 0, y: 0.1}
 --- !u!1 &2470830105753843337
 GameObject:
   m_ObjectHideFlags: 0

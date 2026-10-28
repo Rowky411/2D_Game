@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c5b82cdc35c1254aa4742b893d3a4f7, type: 3}
+  m_Name: ThornRing
+  m_EditorClassIdentifier: Assembly-CSharp::Spell
+  displayName: Thorn Ring
+  icon: {fileID: 21300000, guid: a9d2569dd38a26942979d9562942d635, type: 3}
+  manaCost: 14
+  cooldown: 6
+  count: 8
+  ring: 1
+  spread: 0
+  spawnOffset: 0.4
+  speed: 7
+  range: 2.6
+  hitRadius: 0.4
+  pierce: 1
+  damage: 2
+  knockback: 10
+  frames:
+  - {fileID: -6517687693792239890, guid: 73172d0848c17ff439409a3ebbbb2a2a, type: 3}
+  - {fileID: 4893944848521458191, guid: 73172d0848c17ff439409a3ebbbb2a2a, type: 3}
+  - {fileID: -6519151044307440211, guid: 73172d0848c17ff439409a3ebbbb2a2a, type: 3}
+  - {fileID: 8136058699142578784, guid: 73172d0848c17ff439409a3ebbbb2a2a, type: 3}
+  framesPerSecond: 12
+  spriteAngle: 0
