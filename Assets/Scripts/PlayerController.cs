@@ -49,8 +49,11 @@ public class PlayerController : MonoBehaviour
         // Facing drives the walk/idle direction; without a mouse aim it keeps the last move direction.
         if (faceMouse && TryGetMouseAim(out Vector2 aim)) AimDirection = aim;
         else if (input != Vector2.zero) AimDirection = input.normalized;
-        animator.SetFloat(MoveX, AimDirection.x);
-        animator.SetFloat(MoveY, AimDirection.y);
+        // The sprites have 8 directions; face the one nearest the aim.
+        float aimAngle = Mathf.Atan2(AimDirection.y, AimDirection.x) * Mathf.Rad2Deg;
+        float facingAngle = Mathf.Round(aimAngle / 45f) * 45f;
+        animator.SetFloat(MoveX, Mathf.Cos(facingAngle * Mathf.Deg2Rad));
+        animator.SetFloat(MoveY, Mathf.Sin(facingAngle * Mathf.Deg2Rad));
         animator.SetFloat(Speed, input.sqrMagnitude);
         SetSprinting(sprintHeld && input != Vector2.zero);
     }
