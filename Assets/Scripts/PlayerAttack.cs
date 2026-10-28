@@ -68,6 +68,9 @@ public class PlayerAttack : MonoBehaviour
         if (swinging && attackPoses[facing] != null) spriteRenderer.sprite = attackPoses[facing];
     }
 
+    // Treat the button as already held, so the press that closed a dialogue doesn't swing.
+    private void OnEnable() => held = true;
+
     private void OnDisable()
     {
         swinging = false;

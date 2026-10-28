@@ -35,6 +35,12 @@ public class PlayerSpellcaster : MonoBehaviour
         held = new bool[spells.Length];
     }
 
+    // Treat the keys as already held, so a key still down from a dialogue doesn't cast.
+    private void OnEnable()
+    {
+        for (int i = 0; i < held.Length; i++) held[i] = true;
+    }
+
     private void Update()
     {
         var keyboard = Keyboard.current;

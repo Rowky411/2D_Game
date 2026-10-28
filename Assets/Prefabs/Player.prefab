@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 481525833543334642}
   - component: {fileID: 5186548653217490222}
   - component: {fileID: 5614360135597209779}
+  - component: {fileID: 4788117822151036925}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -206,6 +207,7 @@ MonoBehaviour:
   moveSpeed: 4
   sprintMultiplier: 1.7
   sprintDust: {fileID: 6682692742849314437}
+  faceMouse: 1
 --- !u!114 &7914483440968095610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +316,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 10f07ef0246e1304b90e27e02e2c2d9d, type: 2}
   keys: 290000002a0000002b000000i
   castOrigin: {x: 0, y: 0.1}
+--- !u!114 &4788117822151036925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673376341043856778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e9981dd15c0973449cdcdf394725077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
+  interactKey: 19
+  range: 1.4
 --- !u!1 &2470830105753843337
 GameObject:
   m_ObjectHideFlags: 0

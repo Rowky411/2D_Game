@@ -65,7 +65,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
+        // Stop in place (e.g. while talking) rather than sliding with the last velocity.
         input = Vector2.zero;
+        body.linearVelocity = Vector2.zero;
+        if (animator.isActiveAndEnabled) animator.SetFloat(Speed, 0f);
         SetSprinting(false);
     }
 
